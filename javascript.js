@@ -1,22 +1,4 @@
-function Login(){
 
-var done=0;
-
-var username=document.login.username.value;
-
-username=username.toLowerCase();
-
-var password=document.login.password.value;
-
-password=password.toLowerCase();
-
-if (username=="adm" && password=="123") { window.location="index.html"; done=1; }
-
-if (username=="usuario" && password=="123") { window.location="index.html"; done=1; }
-
-if (done==0) { alert("Senha ou Usuário inválido."); }
-
-}
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>    
     <script type="text/javascript" >
 	$.getJSON("array.json", function(json) {
