@@ -1,0 +1,64 @@
+<DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset="utf-8">
+<title>Teste JS</title>
+<link rel=stylesheet type="text/css" href="teste.css">
+</head>
+<body>
+<p id="demo"></p>
+<script>
+	var eCommerce = { "produto":[
+{ "name" : "Ar Condicionado Samsung Split Hi Wall Max Plus 9000 BTUs Quente/Frio 220V ", "id" : 010101003190821223},
+{ "name" : "Refrigerador Consul Duplex Bem Estar Frost Free Evox Platinum 405L", "id" : 760050052313050201},
+{ "name" : "Lava e Seca Midea Acqua 10,1Kg Branca", "id" : 393013360201000021},
+{ "name" : "Coifa Parede Gallant Venezia Vidro Curvo Inox 90cm", "id" : 031581361213710011},
+{ "name" : "Bicicleta Freeride Aro 26 Freio a Disco 21 Velocidades Câmbios Shimano Verde Neon" , "id" : "MKP000163000003"},
+{ "name" : "Cassete Roda Livre Sunrace MTB 7 Velocidades 14-28D", "id" : "MKP000368000885"},
+{ "name" : "Bola de Futebol N.5", "id" : "STR0003655420885"}
+	]
+	}
+	var len               = eCommerce.produto.length,
+    infoAr = [];
+for (var i=0; i < len; i++){
+  var nome     = eCommerce.produto[i].name;
+  var id = eCommerce.produto[i].id;  
+  var strHTML  = "<b>"+name+"<b>"+
+                 "<br>Id.: "+id;
+  infoAr.push(strHTML);
+}
+function preencheDados(infoAr){
+    var inAr = ["ArCondicionado","Refrigerador","lavaeSeca","Coifa","Bicicleta","Cassete","Bola"];
+    for (var i=0; i < inAr.length; i++){
+      $('#div'+inAr[i]).html(infoAr[i]);
+    }
+}
+function myFunction() {
+    var txt;
+    var person = prompt("Informe seu CEP: ", "");
+	var person1 = prompt("Informe a quantidade de itens: ", "");
+    if (person == null || person == "") {
+        txt = "Voce cancelou a compra.";
+    } else {
+        txt = "Seu Cep" + person + "Voce escolheu " + person1;
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+    <div>
+        <label for="cep">Cep:</label>
+        <input type="text" id="cep" />
+    </div>
+    <div>
+        <label for="qtd">Quantidade:</label>
+        <input type="email" id="qtd" />
+    </div>    
+    <div class="button">
+        <button type="submit">Verificar</button>
+    </div>
+</form>
+<button onclick="myFunction()">Confirme</button>
+
+<p id="demo"></p>
+</body>
+</html>

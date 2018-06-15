@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Teste JS</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="array.json"></script>
+<script type="text/javascript" src="javascript.js"></script>
+ <style type="text/css">
+ <script type="text/javascript" src="validacao.js"></script>
+body {
+	text-align: justify;
+}
+#menu{
+	text-align: justify;
+}
+#imagem1{
+	display:block;
+    width: 450px;
+    height: 250px;
+    margin-right: auto;
+    margin-left: auto;
+    top: 200px;
+    text-align: center;} 
+#meio4{font-size: 20px;
+		margin-top: -20px;
+	text-align: center;
+	margin-left: 150px;
+	margin-right: 150px;
+	background-color: white;}
+	.h2{
+		text-align: center;
+	}
+ </style>
+  </head>
+<body>
+<script>
+function confirmaCep() {
+    var txt;
+    var person = prompt("Informe seu CEP: ", "");
+	var person1 = prompt("Informe a quantidade de itens: ", "");
+    if (person == null || person == "") {
+        txt = "Voce cancelou a compra.";
+    } else {
+        txt = "Seu Cep" + person + "Voce escolheu " + person1 + " itens.";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+var carrinho = new Array();
+	var pagamento, nome, cpf, endereco;
+	function Produto(cod, nom, pre) {
+		this.codigo = cod;
+		this.nome = nom;
+		this.preco= pre;
+		}
+		function Inclui(cod, nom, prc, bol, cre, nom1, cpf, end)
+{
+	carrinho[carrinho.length] = new Produto(cod, nom, prc, bol, cre, nom1, cpf, end);
+}
+function Mostra()
+{
+	var i,subtotal, total;
+
+	with (document)
+	{
+		write("<html><head><title>Carrinho de Compras</title>");
+		write("<link rel=stylesheet type='text/css' href='LojaCss.css'>");
+		write("</head><body>");
+		write("<h3>Carrinho de Compras</h3>");
+		write("<table border=0 cellpadding=6 cellspacing=0 width=100%>");
+		write("<tr bgcolor=gold>");
+		write("<th>Descrição</th>");
+		write("<th>Preço</th>");
+		write("</tr>");
+		subtotal = 0;
+		for (i = 0; i < carrinho.length; i++)
+		{
+			write("<tr bgcolor=", (i % 2) ? "white" : "khaki", ">");
+			write("<td>", carrinho[i].nome, "</td>");
+			write("<td>", carrinho[i].preco, "</td>");
+			write("</tr>");
+			subtotal += parseFloat(carrinho[i].preco);
+			total= subtotal;
+		}
+		write("<tr bgcolor=gold>");
+		write("<td>Total</td>");
+		write("<td>", subtotal, "</td>");
+		write("<td>", total, "</td>");
+		write("</tr>");
+		write("</table>");
+		write("<p align=center><a href='javascript:history.go(-1);'>");
+		write("Voltar a lista</a></p>");
+		write("</body></html>");
+		close();
+	}
+}
+</script>
+<body>
+<ul class="nav nav-tabs" id="menu">
+<a class="navbar-brand " href="#">@WebContinental</a>
+  <li class="active"><a data-toggle="tab" href="#home">Promoções</a></li>
+  <li><a data-toggle="tab" href="#menu1">Eletronicos</a></li>
+  <li><a data-toggle="tab" href="#menu2">Eletrodomesticos</a></li>
+  <li><a data-toggle="tab" href="#menu3">Quem Somos</a></li>
+  <li><a data-toggle="tab" href="#menu4">Contato</a></li>
+  </ul>
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">  
+  <h3>Promoções</h3>
+<fieldset method="post" action="abc.php" id="meio4">
+  	<section> 
+	    <article >
+	    	<form method="post" action="abc.php"><br>
+	             <h2>Mouse G502</h2>
+	             <div>
+	        <img id="imagem1" src="imagens/Coaching2-Fotosearch_k17032053_1.jpg">
+	        </div>
+	        <h3>R$ 250,00
+					<p>Melhor mouse custo beneficio, customizavel por pesagem, com rgb Azul.</p>
+		</form>
+		</article>
+		</fieldset>
+		<fieldset method="post" action="abc.php" id="meio4">
+  	<section> 
+	    <article >
+	    	<form method="post" action="abc.php"><br>
+	             <h2>Teclado RedDragon Kamura</h2>
+	             <div>
+	        <img id="imagem1" src="imagens/Coaching2-Fotosearch_k17032053_1.jpg">
+	        </div>
+	        <h3>R$ 140,00
+					<p>Teclado Mecanico de alto rendimento, rgb vermelho, sem numpad.</p>
+		</form>
+		</article>
+		</fieldset>
+<button onclick="confirmaCep()" href="validacao.js">Confirme</button>
+<p id="demo"></p>
+<H1>Estoque</h1>
+
+<p>Ar Condicionado Samsung
+<ul>
+<li>Split Hi Wall Max Plus</li>
+<li>9000 BTUs</li>
+<li>Quente/Frio</li>
+<li>Voltagem: 220V<br><br>
+    <table border=8 cellspacing=0 cellpadding=4 bgcolor=yellow><tr><th>
+	<a href="javascript:Inclui('Samsung', 'Ar Condicionado Samsung', 010101003190821223)">
+    Selecionar
+    </a></th></tr></table>
+</li>
+</ul>
+</p>
+
+<p>Lava e Seca
+<ul>
+<li>Midea Acqua</li>
+<li>10,1Kg</li>
+<li>Branca<br><br>
+    <table border=4 cellspacing=0 cellpadding=4 bgcolor=yellow ><tr><th>
+	<a href="javascript:Inclui('Lavaseca', 'Midea Acqua', 393013360201000021)">
+    Selecionar
+    </a></th></tr></table>
+</li>
+</ul>
+</p>
+<p>Refrigerador Consul
+<ul>
+<li>Frost Free</li>
+<li>Frost Free</li>
+<li>Duplex</li>
+<li>405L<br><br>
+    <table border=4 cellspacing=0 cellpadding=4 bgcolor=yellow><tr><th>
+	<a href="javascript:Inclui('Consul ', 'Refrigerador Consul ', 760050052313050201)">
+    Selecionar
+    </a></th></tr></table>
+</li>
+</ul>
+</p>
+<p>Coifa Parede
+<ul>
+<li>Gallant Venezia</li>
+<li>Vidro Curvo Inox 90cm<br><br>
+    <table border=4 cellspacing=0 cellpadding=4 bgcolor=yellow><tr><th>
+	<a href="javascript:Inclui('Coifa', 'Coifa Gallant', 031581361213710011)">
+    Selecionar
+    </a></th></tr></table>
+</li>
+</ul>
+</p>
+<p>Bicicleta Freeride
+<ul>
+<li>Aro 26</li>
+<li>Freio a Disco</li>
+<li>21 Velocidades</li>
+<li>Câmbios Shimano </li>
+<li>Verde Neon</li>
+<li>Freio a Disco<br><br>
+    <table border=4 cellspacing=0 cellpadding=4 bgcolor=yellow><tr><th>
+	<a href="javascript:Inclui('Bicicleta', 'Bicicleta Freeride', MKP000163000003)">
+    Selecionar
+    </a></th></tr></table>
+</li>
+</ul>
+</p>
+<p>Cassete Roda Livre
+<ul>
+<li>Sunrace MTB</li>
+<li>7 Velocidades<br><br>
+    <table border=4 cellspacing=0 cellpadding=4 bgcolor=yellow><tr><th>
+	<a href="javascript:Inclui('Cassete', 'Cassete Roda Livre', MKP000368000885)">
+    Selecionar
+    </a></th></tr></table>
+</li>
+</ul>
+</p>
+<p>Bola de Futebol
+<ul>
+<li>N.5<br><br>
+    <table border=4 cellspacing=0 cellpadding=4 bgcolor=yellow><tr><th>
+	<a href="javascript:Inclui('Bola', 'Bola de Futebol', STR0003655420885)">
+    Selecionar
+    </a></th></tr></table>
+</li>
+</ul>
+</p>
+</body>
+</html>
