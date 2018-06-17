@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="scripts/jquery.min.js.download"></script>
+ <script src="scripts/jquery.imagemapster.js.download"></script>
+ <link type="text/css" rel="stylesheet" href="LojaCss.css">
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+       $.ajax({
+                    var myJSon = {"Aluno":"nome", "Respostas":[], "Sessao":[] };
+                    type: "POST",
+                    url: 'http://localhost:8080/Servidor/server',
+                    dataType: "json",
+                    data: JSON.stringify(myJSon),
+                    sucess: function (data){
+                        alert('Sucess');
+                    },
+                    error: function () {
+                        alert('Error');
+                    }
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Send an HTTP POST request to a page and get the result back</button>
+
+</body>
+</html>

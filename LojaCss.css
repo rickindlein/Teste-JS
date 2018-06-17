@@ -1,0 +1,42 @@
+h1 {
+	text-align  : center;
+	font-size   : 40pt;
+	font-family : Bookman;
+	color       : red;
+}
+h2 {
+	text-align  : center;
+	font-size   : 30pt;
+	font-family : Bookman;
+	color       : red;
+}
+h3 {
+	text-align  : center;
+	font-size   : 20pt;
+	font-family : Bookman;
+	color       : red;
+}
+body {text-align: center;
+	alignment-baseline: central;
+	margin-left: auto;
+	margin-right: auto;
+	background-color : beige;
+	color : darkRed;
+}
+ul {text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+a {
+	font-size   : 14pt;
+	font-family : Helvetica;
+	color       : blue;
+	text-decoration : none;
+}
+a:hover {
+	color       : darkRed;
+}
+.destaque {
+	font-weight : bold;
+	color	    : green;
+}
